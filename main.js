@@ -5,6 +5,7 @@ var
 	height,
 	ctx;
 
+
 var bodies = [];
 	
 function init(){
@@ -19,23 +20,23 @@ function init(){
 	
 	setInterval(function(){
 		updateSystem();
-		updateBodies(0.005);
-		ctx.clearRect(0,0,width,height);
+		updateBodies(0.007);
+		ctx.clearRect(0,2,width,height);
 		drawBodies();
 	},1);
 	
 }
 
 function createBodies(){
-	bodies.push(new Body(100,300,250,Math.PI/2,100,5,true));
+	bodies.push(new Body(100,250,250,Math.PI/2,100,5,true));
 	bodies.push(new Body(100,210,250,Math.PI/2,10,1,true));
 	
 	
 	bodies.push(new Body(150,300,250,Math.PI/2,100,5,true));
-	bodies.push(new Body(300,150,300,0,10,3,true));
+	bodies.push(new Body(300,150,300,0,10,5,true));
 	bodies.push(new Body(350,150,300,0,10,3,true));
 	
-	bodies.push(new Body(400,300,0,0,10000000,15,false));//Sun
+	bodies.push(new Body(450,300,0,1,10000000,15,false));//Sun
 }
 
 function drawBodies(){
@@ -156,12 +157,12 @@ function Tail(maxLength){
 }
 
 var colors = new Array(
-  [62,35,255],
-  [60,255,60],
-  [255,35,98],
-  [45,175,230],
-  [255,0,255],
-  [255,128,0]);
+  [255, 240, 236],
+  [207, 185, 254],
+  [255, 32, 238 ],
+  [58, 6, 86 ],
+  [157, 247, 254],
+  [250, 254, 157 ]);
 
 var step = 0;
 //color table indices for: 
@@ -172,7 +173,7 @@ var step = 0;
 var colorIndices = [0,1,2,3];
 
 //transition speed
-var gradientSpeed = 0.002;
+var gradientSpeed = 0.006;
 
 function updateGradient()
 {
